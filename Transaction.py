@@ -27,6 +27,3 @@ class Transaction():
       else:
         print("Invalid Transaction")
         return None
-
-#tx = Transaction()
-

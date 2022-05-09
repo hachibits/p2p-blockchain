@@ -9,10 +9,11 @@ class Blockchain():
         self.pool = []
         self.poolLimit = 3
         self.newBlock(previousHash="9F86D081884C7D659A2FEAA0C55AD015A3BF4F1B2B0B822CD15D6C15B0F00A08", proof=100)
-    
+
     def newBlock(self, proof, previousHash=None):
         block = {
             'index': len(self.blockchain) + 1,
+            'timestamp': str(datetime.datetime.now()),
             'transaction': self.pool,
             'proof': proof,
             'previousHash': previousHash or self.calculateHash(self.blockchain[-1]),
